@@ -1,0 +1,54 @@
+ :root {
+     --primary: #33a000;
+     --bg: #0f172a;
+ }
+
+ body {
+     font-family: 'Outfit', sans-serif;
+     background: linear-gradient(135deg, var(--bg) 0%, #1e1b4b 100%);
+     color: white;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 100vh;
+     margin: 0;
+     overflow: hidden;
+ }
+
+ img {
+     width: 155px;
+     transition: 5s;
+     animation: whoopwhoop 5s infinite;
+ }
+
+ img:hover {
+     cursor: pointer;
+     opacity: 1;
+ }
+
+ @keyframes whoopwhoop {
+     0% {
+         opacity: .7;
+         transform: scale(0.8);
+     }
+
+     50% {
+         opacity: .5;
+         transform: scale(1.25);
+     }
+
+     70% {
+         opacity: .5;
+         transform: rotate(-180deg);
+     }
+
+     90% {
+         opacity: .6;
+         transform: rotate(-180deg);
+     }
+
+     100% {
+         opacity: .7;
+         transform: scale(.8);
+     }
+ }
