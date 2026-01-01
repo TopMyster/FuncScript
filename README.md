@@ -1,5 +1,9 @@
-# QuickScript
-A simple script based language for beginners 
+# FuncScript
+A simple script based language for beginners
+
+## Commands
+### Cmd
+##### The start command for all JS related functions
 
 ### Installation
 1. Install node.js from https://nodejs.org/en/download/
