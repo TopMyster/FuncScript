@@ -45,25 +45,61 @@ function log(x) {
 }
 
 function alert(x) {
-    alert(x)
+    window.alert(x)
 }
 
 function event(id, event, result) {
     document.getElementById(id).addEventListener(event, result)
 }
 
+function cond(statement, condition, result) {
+    const execute = () => typeof result === 'function' ? result() : result;
+    if (statement === 'if') {
+        if (condition) {
+            return execute()
+        }
+    } else if (statement === 'while') {
+        while (typeof condition === 'function' ? condition() : condition) {
+            execute()
+        }
+    } else if (statement === 'else') {
+        if (!condition) {
+            return execute()
+        }
+    } else if (statement === 'for') {
+        const count = typeof condition === 'function' ? condition() : condition;
+        for (let i = 0; i < count; i++) {
+            execute()
+        }
+    }
+}
+
 const doc = {
     log,
     alert,
-    event
+    event,
+    cond
 }
+
 
 // Variables
 
 const variables = {};
 
-function addV(varName, value) {
+function addVar(varName, value) {
     variables[varName] += value;
+}
+
+function subVar(varName, value) {
+    variables[varName] -= value;
+}
+
+function mulVar(varName, value) {
+    variables[varName] *= value;
+}
+
+function divVar(varName, value) {
+    variables[varName] /= value;
 }
 
 function decl(varName) {
@@ -78,12 +114,25 @@ function get(varName) {
     return variables[varName];
 }
 
+function remove(varName) {
+    delete variables[varName];
+}
+
+function clearVars() {
+    variables = {};
+}
+
 
 const vars = {
     decl,
     set,
     get,
-    addV
+    addVar,
+    subVar,
+    mulVar,
+    divVar,
+    remove,
+    clearVars
 }
 
 // Markup
