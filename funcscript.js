@@ -44,17 +44,17 @@ function log(x) {
     console.log(x)
 }
 
-function alertManual(x) {
+function alert(x) {
     alert(x)
 }
 
-function event(event, result) {
-    document.addEventListener(event, result)
+function event(id, event, result) {
+    document.getElementById(id).addEventListener(event, result)
 }
 
 const doc = {
     log,
-    alert: alertManual,
+    alert,
     event
 }
 
@@ -63,7 +63,7 @@ const doc = {
 const variables = {};
 
 function addV(varName, value) {
-    variables[varName] = value;
+    variables[varName] += value;
 }
 
 function decl(varName) {

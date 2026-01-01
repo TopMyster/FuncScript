@@ -16,9 +16,14 @@
  }
 
  img {
+     position: relative;
+     top: 50%;
+     left: -80%;
+     transform: translate(-50%, -50%);
      width: 155px;
      transition: 5s;
      animation: whoopwhoop 5s infinite;
+     -webkit-user-drag: none;
  }
 
  img:hover {
@@ -51,4 +56,29 @@
          opacity: .7;
          transform: scale(.8);
      }
+ }
+
+ #counter {
+     margin-left: 10px;
+ }
+
+ #counter-btn {
+     padding: 10px;
+     border-radius: 22px;
+     background-color: #FAFAFA;
+     font-weight: bold;
+     font-size: 18px;
+     cursor: pointer;
+     border: none;
+     transition: .3s;
+ }
+
+ #counter-btn:hover {
+     background-color: #33a000;
+     color: white
+ }
+
+ #counter-btn:active {
+     transform: scale(.7);
+     transition: .3s;
  }
