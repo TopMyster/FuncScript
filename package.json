@@ -1,11 +1,33 @@
 {
-    "name": "funcscript",
+    "name": "@topmyster/funcscript",
     "version": "1.0.0",
     "description": "A JS Library built with JavaScript functions",
     "type": "module",
     "main": "funcscript.js",
+    "exports": {
+        ".": {
+            "import": "./funcscript.js",
+            "default": "./funcscript.js"
+        }
+    },
+    "files": [
+        "funcscript.js",
+        "README.md"
+    ],
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "javascript",
+        "library",
+        "functional",
+        "dom",
+        "utilities"
+    ],
+    "author": "TopMyster",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/TopMyster/FuncScript"
     },
     "license": "MIT"
 }
